@@ -1,0 +1,18 @@
+name: the-power-workflow-deployment
+on:
+  deployment
+      
+jobs:
+  blank:
+    runs-on: ubuntu-latest
+    steps:
+      - name: MyCommands
+        run: |
+          echo Hello
+          echo ====================================
+          echo ${{ env.DEPLOYMENT_ENVIRONMENT }}
+          echo ====================================
+          echo World
+          echo ${{ github.event.deployment.environment }}
+          env
+          set
